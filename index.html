@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kannada Temple Receipt</title>
+
+<style>
+body {
+  background: #f0f2f5;
+  font-family: "Noto Serif Kannada", "Noto Sans Kannada", serif;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  margin: 0;
+}
+
+.receipt {
+  width: 100%;
+  max-width: 650px;
+  padding: 18px;
+  border: 4px double #2c3e99;
+  border-radius: 10px;
+  background: #fff;
+  box-sizing: border-box;
+  color:#2c3e99;
+  position:relative;
+}
+
+/* floral corner design */
+.corner {
+  position:absolute;
+  width:18px;
+  height:18px;
+  border:2px solid #2c3e99;
+}
+.tl{top:6px;left:6px;border-right:none;border-bottom:none;}
+.tr{top:6px;right:6px;border-left:none;border-bottom:none;}
+.bl{bottom:6px;left:6px;border-right:none;border-top:none;}
+.br{bottom:6px;right:6px;border-left:none;border-top:none;}
+
+.header {
+  text-align: center;
+}
+
+.header .top-small {
+  font-size: 11px;
+}
+
+.header h1 {
+  font-size: 22px;
+  margin: 4px 0;
+}
+
+.header h3 {
+  font-size: 13px;
+  margin: 2px 0;
+}
+
+/* Rashidi box */
+.receipt-box {
+  display: inline-block;
+  padding: 2px 12px;
+  background:#2c3e99;
+  color:#fff;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* second box */
+.sub-box{
+  display:inline-block;
+  margin-top:6px;
+  padding:3px 14px;
+  border:1.5px solid #2c3e99;
+  border-radius:4px;
+  font-size:13px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.serial-number {
+  color: red;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+.row-right input[type="date"] {
+  border: none;
+  border-bottom: 1.5px dotted #2c3e99;
+  outline: none;
+  font-size: 13px;
+}
+
+.full-line {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.dots {
+  flex: 1;
+  margin-left: 4px;
+  border-bottom: 1.5px dotted #2c3e99;
+  min-height: 16px;
+}
+
+.dots:focus{outline:none;}
+
+.center-note {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+/* Rupees + signature */
+.amount-sign-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:14px;
+}
+
+/* rupees box */
+.amount-box{
+  display:flex;
+  align-items:center;
+  border:2px solid #2c3e99;
+  height:32px;
+}
+
+.amount-box .rupee{
+  background:#2c3e99;
+  color:#fff;
+  padding:0 10px;
+  font-size:20px;
+  font-weight:700;
+  height:100%;
+  display:flex;
+  align-items:center;
+}
+
+.amount-box .amount-edit{
+  width:120px;
+  padding:4px 6px;
+}
+.amount-edit:focus{outline:none;}
+
+.signature{
+  font-size:13px;
+}
+
+/* Buttons */
+.actions {
+  margin-top: 15px;
+  text-align: center;
+}
+.actions button {
+  padding: 7px 14px;
+  font-size: 13px;
+  background: #2c3e99;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media print {
+  .actions { display: none; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="receipt">
+
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+
+  <div class="header">
+    <div class="top-small">
+      * ಶ್ರೀ ಆದಿನಾಥೇಶ್ವರ ಪ್ರಸನ್ನಃ * &nbsp; * ಶ್ರೀ ಬಬ್ಬುಸ್ವಾಮಿ ನಮಃ *
+    </div>
+    <h1>ಶ್ರೀ ಕೋರ್‍ದಬ್ಬು ದೈವಸ್ಥಾನ</h1>
+    <h3>ಮೂಡುಕರೆ - ಕೌಡೂರುಕರೆ</h3>
+    <div class="receipt-box">ರಶೀದಿ</div><br>
+    <div class="sub-box">ರಾಹು ದೈವದ ಪೀಠ ಪ್ರತಿಷ್ಠಾಪನೆ</div>
+  </div>
+
+  <div class="row">
+    <div>ನಂ: <span class="serial-number" id="serial-number">001</span></div>
+    <div>ತಾ : <input type="date"></div>
+  </div>
+
+  <div class="full-line">
+    ಶ್ರೀಮತಿ / ಶ್ರೀ : <span class="dots" contenteditable="true"></span>
+  </div>
+
+  <div class="full-line">
+    <span class="dots" contenteditable="true"></span> ಇವರು
+  </div>
+
+  <div class="full-line">
+    ರೂಪಾಯಿ <span class="dots" contenteditable="true"></span> ವನ್ನೂ
+  </div>
+
+  <div class="center-note">
+    ಕೃತಜ್ಞತಾಪೂರ್ವಕವಾಗಿ ಸ್ವೀಕರಿಸಲಾಯಿತು
+  </div>
+
+  <div class="amount-sign-row">
+    <div class="amount-box">
+      <div class="rupee">₹</div>
+      <div class="amount-edit" contenteditable="true"></div>
+    </div>
+    <div class="signature">
+      ಹಣ ಪಡೆದುಕೊಂಡವರ ಸಹಿ
+    </div>
+  </div>
+
+</div>
+
+<div class="actions">
+  <button onclick="window.print()">Print</button>
+</div>
+
+<script>
+if (!localStorage.getItem('lastSerial')) {
+  localStorage.setItem('lastSerial', 1);
+}
+document.getElementById('serial-number').textContent =
+  localStorage.getItem('lastSerial').toString().padStart(3, '0');
+</script>
+
+</body>
+</html>
